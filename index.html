@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeStore - Free Code Snippets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-csharp.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">CodeStore</div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Free Code Snippets</h1>
+            <p>Download high-quality code snippets for various programming languages</p>
+            <a href="#categories" class="cta-button">Browse Code</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <h2>Code Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" data-category="html">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Web structure and layout</p>
+            </div>
+            <div class="category-card" data-category="css">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Styling and design</p>
+            </div>
+            <div class="category-card" data-category="python">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>General purpose programming</p>
+            </div>
+            <div class="category-card" data-category="javascript">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Web interactivity</p>
+            </div>
+            <div class="category-card" data-category="java">
+                <i class="fab fa-java"></i>
+                <h3>Java</h3>
+                <p>Object-oriented programming</p>
+            </div>
+            <div class="category-card" data-category="c">
+                <i class="fas fa-code"></i>
+                <h3>C</h3>
+                <p>System programming</p>
+            </div>
+            <div class="category-card" data-category="cpp">
+                <i class="fas fa-code"></i>
+                <h3>C++</h3>
+                <p>Advanced system programming</p>
+            </div>
+            <div class="category-card" data-category="csharp">
+                <i class="fas fa-code"></i>
+                <h3>C#</h3>
+                <p>Windows development</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Display Modal -->
+    <div id="codeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Request Custom Code</h2>
+            <div class="code-info">
+                <p>Tell us what kind of code you need, and we'll create it for you!</p>
+                <form id="downloadForm" action="https://formspree.io/f/myzedklw" method="POST">
+                    <input type="email" name="email" id="userEmail" placeholder="Your email" required>
+                    <input type="text" name="codeTitle" id="codeTitle" placeholder="What would you like to name this code?" required>
+                    <textarea name="message" id="codeDescription" placeholder="Describe what you want the code to do (be as specific as possible)" required></textarea>
+                    <input type="hidden" name="category" id="codeCategory">
+                    <input type="hidden" name="formType" value="codeRequest">
+                    <div class="code-options">
+                        <label>Additional Requirements:</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="requirements" value="comments"> Include detailed comments
+                            </label>
+                            <label>
+                                <input type="checkbox" name="requirements" value="documentation"> Include documentation
+                            </label>
+                            <label>
+                                <input type="checkbox" name="requirements" value="testing"> Include test cases
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="download-btn">Request Code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About CodeStore</h2>
+        <div class="about-content">
+            <p>CodeStore is your one-stop destination for free, high-quality code snippets. We provide code examples in various programming languages to help you learn and build your projects.</p>
+            <p>All code snippets are carefully curated and tested to ensure quality and reliability.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <form class="contact-form" action="https://formspree.io/f/myzedklw" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <input type="hidden" name="formType" value="contact">
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CodeStore</h3>
+                <p>Your source for free code snippets</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodeStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
